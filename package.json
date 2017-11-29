@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "NTS WITBlog - Gil Sun Young",
+  "author": "NTS WITBlog - Kil Sun Young",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
