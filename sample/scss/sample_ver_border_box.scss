@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import "./mixins/icons_default_ver_border_box";
+@import "./mixins/icons_for_change_size";
+@import "./mixins/icons_for_change_color";
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@import "common/base";
+@import "import/sample_layout";
+@import "import/sample_icons";

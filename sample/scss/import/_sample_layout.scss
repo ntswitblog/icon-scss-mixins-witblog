@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/* _sample_layout.scss */
+
+.header {
+	padding: 20px;
+
+	.title {
+		font-size: 25px;
+	}
+
+	.text {
+		padding-top: 10px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.code {
+		display: inline-block;
+		position: relative;
+		padding: 0 2px;
+		font-size: 17px;
+		color: #000;
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			left: 2px;
+			right: 2px;
+			bottom: 5px;
+			height: 12px;
+			background-color: yellow;
+		}
+	}
+}
+
+.container {
+	padding: 0 20px 220px;
+}
+
+.section_example {
+
+	& + .section_example {
+		margin-top: 25px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.example {
+		margin-top: 15px;
+		padding: 10px;
+		border: 1px dotted #ccc;
+
+		.name {
+			font-size: 16px;
+			font-weight: 600;
+
+			&.highlight {
+				display: inline-block;
+				position: relative;
+				padding: 0 4px;
+				color: #000;
+
+				&:before {
+					content: '';
+					position: absolute;
+					z-index: -1;
+					left: 2px;
+					right: 2px;
+					bottom: 4px;
+					height: 13px;
+
+					background-color: yellow;
+				}
+			}
+		}
+
+		.code {
+			padding: 10px 0 15px;
+			font-size: 14px;
+		}
+	}
+
+	.icon + .icon {
+		margin-left: 6px;
+	}
+
+	.icon.has_bg {
+		background-color: lightpink;
+	}
+
+	.button.has_bg {
+		background-color: hotpink;
+	}
+}
+
+.footer {
+	display: table;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 200px;
+	font-size: 0;
+	text-align: center;
+	background-color: rgba(#000, 0.8);
+
+	.inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.message {
+		overflow-y: scroll;
+		max-height: 75px;
+		margin-bottom: 15px;
+		padding: 0 20px;
+		font-size: 14px;
+		font-weight: 600;
+		color: #fff;
+		line-height: 25px;
+		word-break: break-all;
+		-ms-overflow-style: none;
+		overflow: -moz-scrollbars-none;
+
+		pre  {
+			display: inline-block;
+			position: relative;
+			z-index: 0;
+			padding: 0 4px;
+			font-size: 13px;
+			color: #000;
+
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				left: 3px;
+				right: 2px;
+				bottom: 4px;
+				height: 16px;
+				background-color: yellow;
+			}
+		}
+	}
+
+	.group_button {
+
+		.button {
+			height: 30px;
+			margin-top: 5px;
+			padding: 0 10px;
+			font-size: 12px;
+			font-weight: 700;
+			line-height: 26px;
+			border-radius: 15px;
+			background-color: #fff;
+			border: 2px solid #000;
+
+			&.is_active {
+				background-color: yellow;
+			}
+
+			& + .button {
+				margin-left: 5px;
+			}
+		}
+	}
+}

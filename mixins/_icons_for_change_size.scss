@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/* mixin icons for change size */
+
+// X icon
+@mixin changeIconCancelSize($size: 21px, $thick: 2px, $padding: 0) {
+	width: $size + $padding*2;
+	height: $size + $padding*2;
+
+	&:before, &:after {
+		width: round($size*$sqrt_2 - $thick);
+		height: $thick;
+	}
+}
+
+// Triangle icon
+@mixin changeIconTriangleSize($direction: 'up', $width: 20px, $height: 10px) {
+	width: $width;
+	height: $height;
+
+	&:before {
+		@if ($direction == 'up') {
+			border-bottom: $height solid currentColor;
+			border-left: round($width/2) solid transparent;
+			border-right: round($width/2) solid transparent;
+		} @else if ($direction == 'down') {
+			border-top: $height solid currentColor;
+			border-left: round($width/2) solid transparent;
+			border-right: round($width/2) solid transparent;
+		} @else if ($direction == 'left') {
+			border-top: round($height/2) solid transparent;
+			border-bottom: round($height/2) solid transparent;
+			border-right: $width solid currentColor;
+		} @else if ($direction == 'right') {
+			border-top: round($height/2) solid transparent;
+			border-bottom: round($height/2) solid transparent;
+			border-left: $width solid currentColor;
+		}
+	}
+}
+
+// Angle icon
+@mixin changeIconAngleSize($direction: 'up', $width: 50px, $height: 25px, $thick: 2px) {
+	width: $width;
+	height: $height;
+
+	@if ($direction == 'up' or $direction == 'down') {
+		$size: floor($width/$sqrt_2 - 2*$thick);
+		$rate: 2*$height/$width;
+		$margin-top: round($rate*$size/(2*$sqrt_2));
+
+		&:before {
+			width: $size;
+			height: $size;
+			@if ($rate == 1) {
+				-webkit-transform: translate(-50%, -50%) rotate(45deg);
+				transform: translate(-50%, -50%) rotate(45deg);
+			} @else {
+				-webkit-transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+				transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+			}
+
+			@if ($direction == 'up') {
+				margin-top: $margin-top;
+				border-top: $thick solid currentColor;
+				border-left: $thick solid currentColor;
+			} @else if ($direction == 'down') {
+				margin-top: - $margin-top;
+				border-right: $thick solid currentColor;
+				border-bottom: $thick solid currentColor;
+			}
+		}
+	} @else if ($direction == 'left' or $direction == 'right') {
+		$size: floor($height/$sqrt_2 - 2*$thick);
+		$rate: 2*$width/$height;
+		$margin-left: round($rate*$size/(2*$sqrt_2));
+
+		&:before {
+			width: $size;
+			height: $size;
+
+			@if ($rate == 1) {
+				-webkit-transform: translate(-50%, -50%) rotate(45deg);
+				transform: translate(-50%, -50%) rotate(45deg);
+			} @else {
+				-webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+				transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+			}
+
+			@if ($direction == 'left') {
+				margin-left: $margin-left;
+				border-left: $thick solid currentColor;
+				border-bottom: $thick solid currentColor;
+			} @else if ($direction == 'right') {
+				margin-left: - $margin-left;
+				border-top: $thick solid currentColor;
+				border-right: $thick solid currentColor;
+			}
+		}
+	}
+}
+
+// Arrow icon
+@mixin changeIconArrowSize($direction: 'up', $width: 50px, $height: 50px, $thick: 2px) {
+	width: $width;
+	height: $height;
+
+	&:before {
+		border-top: $thick solid currentColor;
+		border-left: $thick solid currentColor;
+
+		@if ($direction == 'up' or $direction == 'down') {
+			$size: round($width/$sqrt_2 - $thick);
+			width: $size;
+			height: $size;
+
+			@if ($direction == 'up') {
+				top: round($width/2);
+			} @else if ($direction == 'down') {
+				bottom: round($width/2);
+			}
+		} @else if ($direction == 'left' or $direction == 'right') {
+			$size: round($height/$sqrt_2 - $thick);
+			width: $size;
+			height: $size;
+
+			@if ($direction == 'left') {
+				left: round($height/2);
+			} @else if ($direction == 'right') {
+				right: round($height/2);
+			}
+		}
+	}
+
+	&:after {
+
+		@if ($direction == 'up' or $direction == 'down') {
+
+			@if ($direction == 'up') {
+				top: round($thick/$sqrt_2);
+			} @else if ($direction == 'down') {
+				bottom: round($thick/$sqrt_2);
+			}
+
+			width: $thick;
+			height: $height - round($thick/$sqrt_2);
+
+		} @else if ($direction == 'left' or $direction == 'right') {
+
+			@if ($direction == 'left') {
+				left: round($thick/$sqrt_2);
+			} @else if ($direction == 'right') {
+				right: round($thick/$sqrt_2);
+			}
+
+			width: $width - round($thick/$sqrt_2);
+			height: $thick;
+		}
+	}
+}
+
+// Menu icon
+@mixin changeIconMenuSize($width: 21px, $thick: 2px, $interval: 6px, $padding: 0) {
+	margin: $thick+$interval+$padding $padding;
+
+	&, &:before, &:after {
+		width: $width;
+		height: $thick;
+	}
+
+	&:before {
+		top: -($thick+$interval);
+	}
+
+	&:after {
+		top: $thick+$interval;
+	}
+}
+
+// More icon
+@mixin changeIconMoreSize($direction: 'vertical', $size: 4px, $interval: 4px, $padding: 0) {
+	margin: $size+$interval+$padding;
+
+	&, &:before, &:after {
+		width: $size;
+		height: $size;
+	}
+
+	@if ($direction == 'vertical') {
+		&:before {
+			top: -($size+$interval);
+		}
+
+		&:after {
+			top: $size+$interval;
+		}
+
+	} @else if ($direction == 'horizontal') {
+		&:before {
+			left: -($size+$interval);
+		}
+
+		&:after {
+			left: $size+$interval;
+		}
+	}
+}

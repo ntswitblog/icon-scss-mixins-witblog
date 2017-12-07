@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* mixin icons for change color */
+
+@mixin changeIconColor($color: #000) {
+	color: $color;
+}

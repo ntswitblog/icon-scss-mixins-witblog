@@ -1,0 +1,1104 @@
+@charset "UTF-8";
+/* mixin icons default */
+/* mixin icons for change size */
+/* mixin icons for change color */
+/* base.scss */
+body, html, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, figure, pre {
+  margin: 0;
+  padding: 0;
+}
+
+section, article, aside, nav, main, header, footer, figure {
+  display: block;
+}
+
+body, input, textarea, select, button, table {
+  font-family: "Apple SD Gothic Neo", "Helvetica Neue", "Helvetica",  "Arial", "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", sans-serif;
+  line-height: 1.2;
+  font-size: 16px;
+  color: #000;
+}
+
+form, fieldset, button, img {
+  border: 0;
+  vertical-align: top;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+em, address {
+  font-style: normal;
+}
+
+a, a:hover, a:active, a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  border-radius: 0;
+  border: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+  border-radius: 0;
+}
+
+/* _sample_layout.scss */
+.header {
+  padding: 20px;
+}
+
+.header .title {
+  font-size: 25px;
+}
+
+.header .text {
+  padding-top: 10px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.header .code {
+  display: inline-block;
+  position: relative;
+  padding: 0 2px;
+  font-size: 17px;
+  color: #000;
+}
+
+.header .code:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  right: 2px;
+  bottom: 5px;
+  height: 12px;
+  background-color: yellow;
+}
+
+.container {
+  padding: 0 20px 220px;
+}
+
+.section_example + .section_example {
+  margin-top: 25px;
+}
+
+.section_example .title {
+  font-size: 20px;
+}
+
+.section_example .example {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px dotted #ccc;
+}
+
+.section_example .example .name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.section_example .example .name.highlight {
+  display: inline-block;
+  position: relative;
+  padding: 0 4px;
+  color: #000;
+}
+
+.section_example .example .name.highlight:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  right: 2px;
+  bottom: 4px;
+  height: 13px;
+  background-color: yellow;
+}
+
+.section_example .example .code {
+  padding: 10px 0 15px;
+  font-size: 14px;
+}
+
+.section_example .icon + .icon {
+  margin-left: 6px;
+}
+
+.section_example .icon.has_bg {
+  background-color: lightpink;
+}
+
+.section_example .button.has_bg {
+  background-color: hotpink;
+}
+
+.footer {
+  display: table;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  font-size: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer .inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.footer .message {
+  overflow-y: scroll;
+  max-height: 75px;
+  margin-bottom: 15px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 25px;
+  word-break: break-all;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.footer .message pre {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  padding: 0 4px;
+  font-size: 13px;
+  color: #000;
+}
+
+.footer .message pre:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 3px;
+  right: 2px;
+  bottom: 4px;
+  height: 16px;
+  background-color: yellow;
+}
+
+.footer .group_button .button {
+  height: 30px;
+  margin-top: 5px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 26px;
+  border-radius: 15px;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.footer .group_button .button.is_active {
+  background-color: yellow;
+}
+
+.footer .group_button .button + .button {
+  margin-left: 5px;
+}
+
+/* _sample_icons.scss */
+.section_example .icon_cancel {
+  position: relative;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  color: #000;
+}
+
+.section_example .icon_cancel:before, .section_example .icon_cancel:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.section_example .icon_cancel:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.section_example .icon_cancel:after {
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.section_example .icon_cancel_bg_round {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.section_example .icon_cancel_bg_round:before, .section_example .icon_cancel_bg_round:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.section_example .icon_cancel_bg_round:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.section_example .icon_cancel_bg_round:after {
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.section_example .icon_triangle {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  color: #000;
+}
+
+.section_example .icon_triangle:before {
+  content: '';
+  display: block;
+  border-bottom: 10px solid currentColor;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.section_example .icon_triangle_up {
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  color: #666;
+}
+
+.section_example .icon_triangle_up:before {
+  content: '';
+  display: block;
+  border-bottom: 15px solid currentColor;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.section_example .icon_triangle_down {
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+  color: #666;
+}
+
+.section_example .icon_triangle_down:before {
+  content: '';
+  display: block;
+  border-top: 15px solid currentColor;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.section_example .icon_triangle_left {
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_triangle_left:before {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid currentColor;
+}
+
+.section_example .icon_triangle_right {
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_triangle_right:before {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid currentColor;
+}
+
+.section_example .icon_angle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  color: #222;
+}
+
+.section_example .icon_angle:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 31px;
+  height: 31px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  margin-top: 11px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.section_example .icon_angle_up {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_angle_up:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  -webkit-transform: translate(-50%, -50%) scale(1, 1.5) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1, 1.5) rotate(45deg);
+  margin-top: 12px;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+}
+
+.section_example .icon_angle_down {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_angle_down:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  -webkit-transform: translate(-50%, -50%) scale(1, 1.5) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1, 1.5) rotate(45deg);
+  margin-top: -12px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+}
+
+.section_example .icon_angle_left {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  color: #666;
+}
+
+.section_example .icon_angle_left:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  -webkit-transform: translate(-50%, -50%) scale(1.5, 1) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1.5, 1) rotate(45deg);
+  margin-left: 12px;
+  border-left: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+}
+
+.section_example .icon_angle_right {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  color: #666;
+}
+
+.section_example .icon_angle_right:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  -webkit-transform: translate(-50%, -50%) scale(1.5, 1) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1.5, 1) rotate(45deg);
+  margin-left: -12px;
+  border-top: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+}
+
+.section_example .icon_arrow {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #222;
+}
+
+.section_example .icon_arrow:before {
+  content: '';
+  position: absolute;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  left: 50%;
+  width: 33px;
+  height: 33px;
+  top: 25px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.section_example .icon_arrow:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 1px;
+  left: 50%;
+  width: 2px;
+  height: 49px;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.section_example .icon_arrow_up {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 45px;
+  color: #666;
+}
+
+.section_example .icon_arrow_up:before {
+  content: '';
+  position: absolute;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  top: 15px;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.section_example .icon_arrow_up:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 2px;
+  left: 50%;
+  width: 3px;
+  height: 43px;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.section_example .icon_arrow_down {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 45px;
+  color: #666;
+}
+
+.section_example .icon_arrow_down:before {
+  content: '';
+  position: absolute;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  bottom: 15px;
+  -webkit-transform: translate(-50%, 50%) rotate(-135deg);
+  transform: translate(-50%, 50%) rotate(-135deg);
+}
+
+.section_example .icon_arrow_down:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  bottom: 2px;
+  left: 50%;
+  width: 3px;
+  height: 43px;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+.section_example .icon_arrow_left {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_arrow_left:before {
+  content: '';
+  position: absolute;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  left: 15px;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.section_example .icon_arrow_left:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 50%;
+  left: 2px;
+  width: 43px;
+  height: 3px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.section_example .icon_arrow_right {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 30px;
+  color: #666;
+}
+
+.section_example .icon_arrow_right:before {
+  content: '';
+  position: absolute;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  right: 15px;
+  -webkit-transform: translate(50%, -50%) rotate(135deg);
+  transform: translate(50%, -50%) rotate(135deg);
+}
+
+.section_example .icon_arrow_right:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 50%;
+  right: 2px;
+  width: 43px;
+  height: 3px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.section_example .button_menu {
+  width: 21px;
+  height: 18px;
+}
+
+.section_example .button_menu .icon_menu {
+  position: relative;
+  display: block;
+  margin: 8px 0;
+  color: #000;
+}
+
+.section_example .button_menu .icon_menu, .section_example .button_menu .icon_menu:before, .section_example .button_menu .icon_menu:after {
+  width: 21px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.section_example .button_menu .icon_menu:before, .section_example .button_menu .icon_menu:after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.section_example .button_menu .icon_menu:before {
+  top: -8px;
+}
+
+.section_example .button_menu .icon_menu:after {
+  top: 8px;
+}
+
+.section_example .button_menu_bg_round {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.section_example .button_menu_bg_round .icon_menu {
+  position: relative;
+  display: block;
+  margin: 25px 15px;
+  color: #fff;
+}
+
+.section_example .button_menu_bg_round .icon_menu, .section_example .button_menu_bg_round .icon_menu:before, .section_example .button_menu_bg_round .icon_menu:after {
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+}
+
+.section_example .button_menu_bg_round .icon_menu:before, .section_example .button_menu_bg_round .icon_menu:after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.section_example .button_menu_bg_round .icon_menu:before {
+  top: -10px;
+}
+
+.section_example .button_menu_bg_round .icon_menu:after {
+  top: 10px;
+}
+
+.section_example .button_more {
+  width: 20px;
+  height: 20px;
+}
+
+.section_example .button_more .icon_more {
+  position: relative;
+  display: block;
+  margin: 8px;
+  color: #000;
+}
+
+.section_example .button_more .icon_more, .section_example .button_more .icon_more:before, .section_example .button_more .icon_more:after {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.section_example .button_more .icon_more:before, .section_example .button_more .icon_more:after {
+  content: '';
+  position: absolute;
+}
+
+.section_example .button_more .icon_more:before {
+  top: -8px;
+  left: 0;
+}
+
+.section_example .button_more .icon_more:after {
+  top: 8px;
+  left: 0;
+}
+
+.section_example .button_more_vertical {
+  width: 40px;
+  height: 40px;
+}
+
+.section_example .button_more_vertical .icon_more {
+  position: relative;
+  display: block;
+  margin: 17px;
+  color: #666;
+}
+
+.section_example .button_more_vertical .icon_more, .section_example .button_more_vertical .icon_more:before, .section_example .button_more_vertical .icon_more:after {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.section_example .button_more_vertical .icon_more:before, .section_example .button_more_vertical .icon_more:after {
+  content: '';
+  position: absolute;
+}
+
+.section_example .button_more_vertical .icon_more:before {
+  top: -12px;
+  left: 0;
+}
+
+.section_example .button_more_vertical .icon_more:after {
+  top: 12px;
+  left: 0;
+}
+
+.section_example .button_more_horizontal {
+  width: 40px;
+  height: 40px;
+}
+
+.section_example .button_more_horizontal .icon_more {
+  position: relative;
+  display: block;
+  margin: 17px;
+  color: #666;
+}
+
+.section_example .button_more_horizontal .icon_more, .section_example .button_more_horizontal .icon_more:before, .section_example .button_more_horizontal .icon_more:after {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.section_example .button_more_horizontal .icon_more:before, .section_example .button_more_horizontal .icon_more:after {
+  content: '';
+  position: absolute;
+}
+
+.section_example .button_more_horizontal .icon_more:before {
+  top: 0;
+  left: -12px;
+}
+
+.section_example .button_more_horizontal .icon_more:after {
+  top: 0;
+  left: 12px;
+}
+
+.section_example .button_more_bg_round {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.section_example .button_more_bg_round .icon_more {
+  position: relative;
+  display: block;
+  margin: 24px;
+  color: #fff;
+}
+
+.section_example .button_more_bg_round .icon_more, .section_example .button_more_bg_round .icon_more:before, .section_example .button_more_bg_round .icon_more:after {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.section_example .button_more_bg_round .icon_more:before, .section_example .button_more_bg_round .icon_more:after {
+  content: '';
+  position: absolute;
+}
+
+.section_example .button_more_bg_round .icon_more:before {
+  top: 0;
+  left: -9px;
+}
+
+.section_example .button_more_bg_round .icon_more:after {
+  top: 0;
+  left: 9px;
+}
+
+.section_example.change_size .icon_cancel, .section_example.change_size .icon_cancel_bg_round {
+  width: 60px;
+  height: 60px;
+}
+
+.section_example.change_size .icon_cancel:before, .section_example.change_size .icon_cancel:after, .section_example.change_size .icon_cancel_bg_round:before, .section_example.change_size .icon_cancel_bg_round:after {
+  width: 37px;
+  height: 5px;
+}
+
+.section_example.change_size .icon_triangle, .section_example.change_size .icon_triangle_up {
+  width: 30px;
+  height: 20px;
+}
+
+.section_example.change_size .icon_triangle:before, .section_example.change_size .icon_triangle_up:before {
+  border-bottom: 20px solid currentColor;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.section_example.change_size .icon_triangle_down {
+  width: 30px;
+  height: 20px;
+}
+
+.section_example.change_size .icon_triangle_down:before {
+  border-top: 20px solid currentColor;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.section_example.change_size .icon_triangle_left {
+  width: 20px;
+  height: 30px;
+}
+
+.section_example.change_size .icon_triangle_left:before {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 20px solid currentColor;
+}
+
+.section_example.change_size .icon_triangle_right {
+  width: 20px;
+  height: 30px;
+}
+
+.section_example.change_size .icon_triangle_right:before {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid currentColor;
+}
+
+.section_example.change_size .icon_angle, .section_example.change_size .icon_angle_up {
+  width: 50px;
+  height: 40px;
+}
+
+.section_example.change_size .icon_angle:before, .section_example.change_size .icon_angle_up:before {
+  width: 29px;
+  height: 29px;
+  -webkit-transform: translate(-50%, -50%) scale(1, 1.6) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1, 1.6) rotate(45deg);
+  margin-top: 16px;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+}
+
+.section_example.change_size .icon_angle_down {
+  width: 50px;
+  height: 40px;
+}
+
+.section_example.change_size .icon_angle_down:before {
+  width: 29px;
+  height: 29px;
+  -webkit-transform: translate(-50%, -50%) scale(1, 1.6) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1, 1.6) rotate(45deg);
+  margin-top: -16px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+}
+
+.section_example.change_size .icon_angle_left {
+  width: 40px;
+  height: 50px;
+}
+
+.section_example.change_size .icon_angle_left:before {
+  width: 29px;
+  height: 29px;
+  -webkit-transform: translate(-50%, -50%) scale(1.6, 1) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1.6, 1) rotate(45deg);
+  margin-left: 16px;
+  border-left: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+}
+
+.section_example.change_size .icon_angle_right {
+  width: 40px;
+  height: 50px;
+}
+
+.section_example.change_size .icon_angle_right:before {
+  width: 29px;
+  height: 29px;
+  -webkit-transform: translate(-50%, -50%) scale(1.6, 1) rotate(45deg);
+  transform: translate(-50%, -50%) scale(1.6, 1) rotate(45deg);
+  margin-left: -16px;
+  border-top: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+}
+
+.section_example.change_size .icon_arrow, .section_example.change_size .icon_arrow_up {
+  width: 60px;
+  height: 60px;
+}
+
+.section_example.change_size .icon_arrow:before, .section_example.change_size .icon_arrow_up:before {
+  border-top: 6px solid currentColor;
+  border-left: 6px solid currentColor;
+  width: 36px;
+  height: 36px;
+  top: 30px;
+}
+
+.section_example.change_size .icon_arrow:after, .section_example.change_size .icon_arrow_up:after {
+  top: 4px;
+  width: 6px;
+  height: 56px;
+}
+
+.section_example.change_size .icon_arrow_down {
+  width: 60px;
+  height: 60px;
+}
+
+.section_example.change_size .icon_arrow_down:before {
+  border-top: 6px solid currentColor;
+  border-left: 6px solid currentColor;
+  width: 36px;
+  height: 36px;
+  bottom: 30px;
+}
+
+.section_example.change_size .icon_arrow_down:after {
+  bottom: 4px;
+  width: 6px;
+  height: 56px;
+}
+
+.section_example.change_size .icon_arrow_left {
+  width: 60px;
+  height: 60px;
+}
+
+.section_example.change_size .icon_arrow_left:before {
+  border-top: 6px solid currentColor;
+  border-left: 6px solid currentColor;
+  width: 36px;
+  height: 36px;
+  left: 30px;
+}
+
+.section_example.change_size .icon_arrow_left:after {
+  left: 4px;
+  width: 56px;
+  height: 6px;
+}
+
+.section_example.change_size .icon_arrow_right {
+  width: 60px;
+  height: 60px;
+}
+
+.section_example.change_size .icon_arrow_right:before {
+  border-top: 6px solid currentColor;
+  border-left: 6px solid currentColor;
+  width: 36px;
+  height: 36px;
+  right: 30px;
+}
+
+.section_example.change_size .icon_arrow_right:after {
+  right: 4px;
+  width: 56px;
+  height: 6px;
+}
+
+.section_example.change_size .button_menu, .section_example.change_size .button_menu_bg_round {
+  width: 60px;
+  height: 58px;
+}
+
+.section_example.change_size .button_menu .icon_menu, .section_example.change_size .button_menu_bg_round .icon_menu {
+  margin: 27px 15px;
+}
+
+.section_example.change_size .button_menu .icon_menu, .section_example.change_size .button_menu .icon_menu:before, .section_example.change_size .button_menu .icon_menu:after, .section_example.change_size .button_menu_bg_round .icon_menu, .section_example.change_size .button_menu_bg_round .icon_menu:before, .section_example.change_size .button_menu_bg_round .icon_menu:after {
+  width: 30px;
+  height: 4px;
+}
+
+.section_example.change_size .button_menu .icon_menu:before, .section_example.change_size .button_menu_bg_round .icon_menu:before {
+  top: -12px;
+}
+
+.section_example.change_size .button_menu .icon_menu:after, .section_example.change_size .button_menu_bg_round .icon_menu:after {
+  top: 12px;
+}
+
+.section_example.change_size .button_more, .section_example.change_size .button_more_vertical {
+  width: 50px;
+  height: 50px;
+}
+
+.section_example.change_size .button_more .icon_more, .section_example.change_size .button_more_vertical .icon_more {
+  margin: 22px;
+}
+
+.section_example.change_size .button_more .icon_more, .section_example.change_size .button_more .icon_more:before, .section_example.change_size .button_more .icon_more:after, .section_example.change_size .button_more_vertical .icon_more, .section_example.change_size .button_more_vertical .icon_more:before, .section_example.change_size .button_more_vertical .icon_more:after {
+  width: 6px;
+  height: 6px;
+}
+
+.section_example.change_size .button_more .icon_more:before, .section_example.change_size .button_more_vertical .icon_more:before {
+  top: -12px;
+}
+
+.section_example.change_size .button_more .icon_more:after, .section_example.change_size .button_more_vertical .icon_more:after {
+  top: 12px;
+}
+
+.section_example.change_size .button_more_horizontal, .section_example.change_size .button_more_bg_round {
+  width: 50px;
+  height: 50px;
+}
+
+.section_example.change_size .button_more_horizontal .icon_more, .section_example.change_size .button_more_bg_round .icon_more {
+  margin: 22px;
+}
+
+.section_example.change_size .button_more_horizontal .icon_more, .section_example.change_size .button_more_horizontal .icon_more:before, .section_example.change_size .button_more_horizontal .icon_more:after, .section_example.change_size .button_more_bg_round .icon_more, .section_example.change_size .button_more_bg_round .icon_more:before, .section_example.change_size .button_more_bg_round .icon_more:after {
+  width: 6px;
+  height: 6px;
+}
+
+.section_example.change_size .button_more_horizontal .icon_more:before, .section_example.change_size .button_more_bg_round .icon_more:before {
+  left: -12px;
+}
+
+.section_example.change_size .button_more_horizontal .icon_more:after, .section_example.change_size .button_more_bg_round .icon_more:after {
+  left: 12px;
+}
+
+.section_example.change_color .icon_cancel, .section_example.change_color .icon_cancel_bg_round {
+  color: #f00;
+}
+
+.section_example.change_color .icon_triangle, .section_example.change_color .icon_triangle_up, .section_example.change_color .icon_triangle_down, .section_example.change_color .icon_triangle_left, .section_example.change_color .icon_triangle_right, .section_example.change_color .icon_angle, .section_example.change_color .icon_angle_up, .section_example.change_color .icon_angle_down, .section_example.change_color .icon_angle_left, .section_example.change_color .icon_angle_right, .section_example.change_color .icon_arrow, .section_example.change_color .icon_arrow_up, .section_example.change_color .icon_arrow_down, .section_example.change_color .icon_arrow_left, .section_example.change_color .icon_arrow_right {
+  color: #f00;
+}
+
+.section_example.change_color .button_menu .icon_menu, .section_example.change_color .button_menu_bg_round .icon_menu {
+  color: #f00;
+}
+
+.section_example.change_color .button_more .icon_more, .section_example.change_color .button_more_vertical .icon_more, .section_example.change_color .button_more_horizontal .icon_more, .section_example.change_color .button_more_bg_round .icon_more {
+  color: #f00;
+}

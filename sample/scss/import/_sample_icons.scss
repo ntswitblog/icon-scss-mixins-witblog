@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/* _sample_icons.scss */
+
+.section_example {
+
+	.icon_cancel {
+		@include iconCancel();
+
+		&_bg_round {
+			@include iconCancel($size: 15px, $thick: 2px, $color: #fff, $padding: 10px, $display: inline-block, $position: relative);
+
+			border-radius: 50%;
+			background-color: #ccc;
+		}
+	}
+
+	.icon_triangle {
+		@include iconTriangle();
+
+		&_up {
+			@include iconTriangle($direction: 'up', $width: 30px, $height: 15px, $color: #666, $display: inline-block);
+		}
+
+		&_down {
+			@include iconTriangle($direction: 'down', $width: 30px, $height: 15px, $color: #666, $display: inline-block);
+		}
+
+		&_left {
+			@include iconTriangle($direction: 'left', $width: 15px, $height: 30px, $color: #666, $display: inline-block);
+		}
+
+		&_right {
+			@include iconTriangle($direction: 'right', $width: 15px, $height: 30px, $color: #666, $display: inline-block);
+		}
+	}
+
+	.icon_angle {
+		@include iconAngle();
+
+		&_up {
+			@include iconAngle($direction: 'up', $width: 40px, $height: 30px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_down {
+			@include iconAngle($direction: 'down', $width: 40px, $height: 30px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_left {
+			@include iconAngle($direction: 'left', $width: 30px, $height: 40px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_right {
+			@include iconAngle($direction: 'right', $width: 30px, $height: 40px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+	}
+
+	.icon_arrow {
+		@include iconArrow();
+
+		&_up {
+			@include iconArrow($direction: 'up', $width: 30px, $height: 45px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_down {
+			@include iconArrow($direction: 'down', $width: 30px, $height: 45px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_left {
+			@include iconArrow($direction: 'left', $width: 45px, $height: 30px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+
+		&_right {
+			@include iconArrow($direction: 'right', $width: 45px, $height: 30px, $thick: 3px, $color: #666, $display: inline-block, $position: relative);
+		}
+	}
+
+	.button_menu {
+		width: 21px; // for android 4.X.X issue
+		height: 18px; // for android 4.X.X issue
+
+		.icon_menu {
+			@include iconMenuRequiredParent();
+		}
+
+		&_bg_round {
+			width: 52px; // for android 4.X.X issue
+			height: 52px; // for android 4.X.X issue
+			border-radius: 50%;
+			background-color: #ccc;
+
+			.icon_menu {
+				@include iconMenuRequiredParent($width: 22px, $thick: 2px, $interval: 8px, $color: #fff, $padding: 15px);
+			}
+		}
+	}
+
+	.button_more {
+		width: 20px; // for android 4.X.X issue
+		height: 20px; // for android 4.X.X issue
+
+		.icon_more {
+			@include iconMoreRequiredParent();
+		}
+
+		&_vertical {
+			width: 40px; // for android 4.X.X issue
+			height: 40px; // for android 4.X.X issue
+
+			.icon_more {
+				@include iconMoreRequiredParent($direction: 'vertical', $size: 6px, $interval: 6px, $color: #666, $padding: 5px);
+			}
+		}
+
+		&_horizontal {
+			width: 40px; // for android 4.X.X issue
+			height: 40px; // for android 4.X.X issue
+
+			.icon_more {
+				@include iconMoreRequiredParent($direction: 'horizontal', $size: 6px, $interval: 6px, $color: #666, $padding: 5px);
+			}
+		}
+
+		&_bg_round {
+			width: 52px; // for android 4.X.X issue
+			height: 52px; // for android 4.X.X issue
+			border-radius: 50%;
+			background-color: #ccc;
+
+			.icon_more {
+				@include iconMoreRequiredParent($direction: 'horizontal', $size: 4px, $interval: 5px, $color: #fff,$padding: 15px);
+			}
+		}
+	}
+
+	&.change_size {
+
+		.icon_cancel {
+
+			&, &_bg_round {
+				@include changeIconCancelSize($size: 30px, $thick: 5px, $padding: 15px);
+			}
+		}
+
+		.icon_triangle {
+
+			&, &_up {
+				@include changeIconTriangleSize($direction: 'up', $width: 30px, $height: 20px);
+			}
+
+			&_down {
+				@include changeIconTriangleSize($direction: 'down', $width: 30px, $height: 20px);
+			}
+
+			&_left {
+				@include changeIconTriangleSize($direction: 'left', $width: 20px, $height: 30px);
+			}
+
+			&_right {
+				@include changeIconTriangleSize($direction: 'right', $width: 20px, $height: 30px);
+			}
+		}
+
+		.icon_angle {
+
+			&, &_up {
+				@include changeIconAngleSize($direction: 'up', $width: 50px, $height: 40px, $thick: 3px);
+			}
+
+			&_down {
+				@include changeIconAngleSize($direction: 'down', $width: 50px, $height: 40px, $thick: 3px);
+			}
+
+			&_left {
+				@include changeIconAngleSize($direction: 'left', $width: 40px, $height: 50px, $thick: 3px);
+			}
+
+			&_right {
+				@include changeIconAngleSize($direction: 'right', $width: 40px, $height: 50px, $thick: 3px);
+			}
+		}
+
+		.icon_arrow {
+
+			&, &_up {
+				@include changeIconArrowSize($direction: 'up', $width: 60px, $height: 60px, $thick: 6px);
+			}
+
+			&_down {
+				@include changeIconArrowSize($direction: 'down', $width: 60px, $height: 60px, $thick: 6px);
+			}
+
+			&_left {
+				@include changeIconArrowSize($direction: 'left', $width: 60px, $height: 60px, $thick: 6px);
+			}
+
+			&_right {
+				@include changeIconArrowSize($direction: 'right', $width: 60px, $height: 60px, $thick: 6px);
+			}
+		}
+
+		.button_menu {
+
+			&, &_bg_round {
+				width: 60px; // for android 4.X.X issue
+				height: 58px; // for android 4.X.X issue
+
+				.icon_menu {
+					@include changeIconMenuSize($width: 30px, $thick: 4px, $interval: 8px, $padding: 15px);
+				}
+			}
+		}
+
+		.button_more {
+
+			&, &_vertical {
+				width: 50px; // for android 4.X.X issue
+				height: 50px; // for android 4.X.X issue
+
+				.icon_more {
+					@include changeIconMoreSize($direction: 'vertical', $size: 6px, $interval: 6px, $padding: 10px);
+				}
+			}
+
+			&_horizontal, &_bg_round {
+				width: 50px; // for android 4.X.X issue
+				height: 50px; // for android 4.X.X issue
+
+				.icon_more {
+					@include changeIconMoreSize($direction: 'horizontal', $size: 6px, $interval: 6px, $padding: 10px);
+				}
+			}
+		}
+	}
+
+	&.change_color {
+
+		.icon_cancel {
+
+			&, &_bg_round {
+				@include changeIconColor($color: #f00);
+			}
+		}
+
+		.icon_triangle, .icon_angle, .icon_arrow  {
+
+			&, &_up, &_down, &_left, &_right {
+				@include changeIconColor($color: #f00);
+			}
+		}
+
+		.button_menu {
+
+			&, &_bg_round {
+				.icon_menu {
+					@include changeIconColor($color: #f00);
+				}
+			}
+		}
+
+		.button_more {
+
+			&, &_vertical, &_horizontal, &_bg_round {
+
+				.icon_more {
+					@include changeIconColor($color: #f00);
+				}
+			}
+		}
+	}
+}

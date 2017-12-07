@@ -1,0 +1,51 @@
+/* base.scss */
+body, html, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, figure, pre {
+	margin: 0;
+	padding: 0;
+}
+
+section, article, aside, nav, main, header, footer, figure {
+	display: block;
+}
+
+body, input, textarea, select, button, table {
+	font-family: "Apple SD Gothic Neo", "Helvetica Neue", "Helvetica",  "Arial", "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", sans-serif;
+	line-height: 1.2;
+	font-size: 16px;
+	color: #000;
+}
+
+form, fieldset, button, img {
+	border: 0;
+	vertical-align: top;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+em, address {
+	font-style: normal;
+}
+
+a, a:hover, a:active, a:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+input {
+	-webkit-appearance: none;
+	-webkit-text-size-adjust: none;
+	border-radius: 0;
+	border: 0;
+}
+
+button {
+	background-color: transparent;
+	cursor: pointer;
+	outline: 0;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
+	border-radius: 0;
+}

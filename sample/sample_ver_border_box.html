@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-<title>WIT Icon Mixins Sample</title>
-<link rel="stylesheet" href="css/sample.css">
+<title>WIT Icon Mixins Sample (ver. border-box)</title>
+<link rel="stylesheet" href="css/sample_ver_border_box.css">
 </head>
 
 <body>
 <div class="wrap">
     <header class="header">
-        <h1 class="title">WIT Icon Mixins Sample</h1>
+        <h1 class="title">WIT Icon Mixins Sample (ver. border-box)</h1>
+        <div class="text">CSS file includes <pre class="code">*, *:before, *:after { box-sizing: border-box }</pre> css code. (ex. bootstrap.css)</div>
     </header>
 
     <main class="container">
@@ -40,7 +41,7 @@
             </div>
 
             <div class="example">
-                <strong class="name">Angle ICON</strong>
+                <strong class="name highlight">Angle ICON - Affected by border-box</strong>
                 <pre class="code">@mixin iconAngle(...)</pre>
 
                 <div class="icon_group">
@@ -53,7 +54,7 @@
             </div>
 
             <div class="example">
-                <strong class="name">Arrow ICON</strong>
+                <strong class="name highlight">Arrow ICON - Affected by border-box</strong>
                 <pre class="code">@mixin iconArrow(...)</pre>
 
                 <div class="icon_group">
