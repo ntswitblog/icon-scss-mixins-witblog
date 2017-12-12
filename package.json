@@ -1,6 +1,6 @@
 {
   "name": "icon-scss-mixins-witblog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Collection of the icon scss mixins",
   "main": "./mixin",
   "scripts": {
