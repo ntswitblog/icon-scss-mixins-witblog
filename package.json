@@ -1,6 +1,6 @@
 {
   "name": "icon-scss-mixins-witblog",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Collection of the icon scss mixins",
   "main": "./mixin",
   "scripts": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/ntswitblog/icon-scss-mixins-witblog/issues"
   },
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0"
